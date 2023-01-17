@@ -1,5 +1,5 @@
 import HeaderCell from './HeaderCell';
-import { Column } from './Table';
+import { Column } from '.';
 import styles from './TableHeader.module.css';
 
 interface TableHeaderProps {

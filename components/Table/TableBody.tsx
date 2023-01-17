@@ -1,5 +1,5 @@
 import HeaderCell from './HeaderCell';
-import { Column, HouseholdData } from './Table';
+import { Column, HouseholdData } from '.';
 
 interface TableBodyProps {
   data: HouseholdData[];

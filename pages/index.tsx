@@ -2,9 +2,10 @@ import Head from 'next/head';
 import { useMemo } from 'react';
 import { Inter } from '@next/font/google';
 import { InformationCircleIcon } from '@heroicons/react/24/solid';
-import Table, { Column, HouseholdData } from '@/components/Table/Table';
+import Table, { Column, HouseholdData } from '@/components/Table';
 
 import styles from './index.module.css';
+import Checkbox from '@/components/Checkbox';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -48,7 +49,7 @@ export default function Home() {
           );
         },
         Cell(row: HouseholdData) {
-          return <div>{row.isCovered ? 'true' : 'false'}</div>;
+          return <Checkbox />;
         },
       },
       {
