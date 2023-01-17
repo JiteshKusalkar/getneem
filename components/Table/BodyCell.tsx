@@ -1,12 +1,12 @@
 import { ReactNode } from 'react';
 import styles from './Cell.module.css';
 
-interface ColumnProps {
+interface BodyCellProps {
   column: () => ReactNode;
 }
 
-function Cell({ column }: ColumnProps) {
+function BodyCell({ column }: BodyCellProps) {
   return <div className={styles.headerCell}>{column()}</div>;
 }
 
-export default Cell;
+export default BodyCell;

@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import TableBody from './TableBody';
 import TableHeader from './TableHeader';
 
 interface Username {
@@ -20,7 +21,7 @@ export interface HouseholdData {
 
 export interface Column {
   Header: () => ReactNode;
-  Cell: () => ReactNode;
+  Cell: (data: HouseholdData) => ReactNode;
 }
 
 interface TableProps {
@@ -32,7 +33,7 @@ function Table({ data, columns }: TableProps) {
   return (
     <div>
       <TableHeader columns={columns} />
-      <div>{JSON.stringify(data)}</div>
+      <TableBody data={data} columns={columns} />
     </div>
   );
 }

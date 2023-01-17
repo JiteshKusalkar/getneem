@@ -47,40 +47,42 @@ export default function Home() {
             </>
           );
         },
-        Cell() {
-          return <div>Col 1</div>;
+        Cell(row: HouseholdData) {
+          return <div>{row.isCovered ? 'true' : 'false'}</div>;
         },
       },
       {
         Header() {
           return 'Name';
         },
-        Cell() {
-          return <div>Col 2</div>;
+        Cell(row: HouseholdData) {
+          return (
+            <div>{`${row.name.first} ${row.name.last} ${row.name.preferred}`}</div>
+          );
         },
       },
       {
         Header() {
           return 'Subscriber';
         },
-        Cell() {
-          return <div>Col 2</div>;
+        Cell(row: HouseholdData) {
+          return <div>{row.isSubscribed ? 'true' : 'false'}</div>;
         },
       },
       {
         Header() {
           return 'Insurance';
         },
-        Cell() {
-          return <div>Col 2</div>;
+        Cell(row: HouseholdData) {
+          return <div>{row.insurance}</div>;
         },
       },
       {
         Header() {
           return 'ID';
         },
-        Cell() {
-          return <div>Col 2</div>;
+        Cell(row: HouseholdData) {
+          return <div>{row.identifier}</div>;
         },
       },
     ],

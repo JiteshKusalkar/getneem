@@ -1,4 +1,4 @@
-import Cell from './Cell';
+import HeaderCell from './HeaderCell';
 import { Column } from './Table';
 import styles from './TableHeader.module.css';
 
@@ -10,7 +10,7 @@ function TableHeader({ columns }: TableHeaderProps) {
   return (
     <div className={styles.main}>
       {columns.map((column, i) => (
-        <Cell column={column.Header} key={i} />
+        <HeaderCell column={column.Header()} key={i} />
       ))}
     </div>
   );
