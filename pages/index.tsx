@@ -1,7 +1,10 @@
 import Head from 'next/head';
-import { Inter } from '@next/font/google';
-import Table, { Column, HouseholdData } from '@/components/Table/Table';
 import { useMemo } from 'react';
+import { Inter } from '@next/font/google';
+import { InformationCircleIcon } from '@heroicons/react/24/solid';
+import Table, { Column, HouseholdData } from '@/components/Table/Table';
+
+import styles from './index.module.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -37,7 +40,12 @@ export default function Home() {
     () => [
       {
         Header() {
-          return <div>Header 1</div>;
+          return (
+            <>
+              <span>Covered</span>
+              <InformationCircleIcon className={styles.headerIcon} />
+            </>
+          );
         },
         Cell() {
           return <div>Col 1</div>;
@@ -45,7 +53,31 @@ export default function Home() {
       },
       {
         Header() {
-          return <div>Header 2</div>;
+          return 'Name';
+        },
+        Cell() {
+          return <div>Col 2</div>;
+        },
+      },
+      {
+        Header() {
+          return 'Subscriber';
+        },
+        Cell() {
+          return <div>Col 2</div>;
+        },
+      },
+      {
+        Header() {
+          return 'Insurance';
+        },
+        Cell() {
+          return <div>Col 2</div>;
+        },
+      },
+      {
+        Header() {
+          return 'ID';
         },
         Cell() {
           return <div>Col 2</div>;
